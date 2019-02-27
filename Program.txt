@@ -1,0 +1,64 @@
+Char array[]={a,b,c,d,e,f,g,h,I,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z};
+Char array1[]={A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z};
+Char array2[]={0,1,2,3,4,5,6,7,8,9};
+Char array3[]={@,#,$,*,=,_};
+Char array4[]={%,!,),(};
+
+Cout<<”Enter the password”;
+Cin>>str;
+
+If(str.length()<6)
+Cout<<”invalid password, the length of the password must be atleast 6 characters”;
+Else if(str.length()>12)
+Cout<<”invalid password, the length of the password must be atmost 12 characters”;
+else
+{
+For(i=0;i<str.length();i++)
+{
+For(j=0;j<26,j++)
+{
+If(str[i]==array[j])
+Flag1++;
+}
+For(k=0;k<26,k++)
+{
+If(str[i]==array1[k])
+Flag2++;
+}
+For(l=0;l<8;l++)
+{
+If(str[i]==array2[l])
+Flag3++;
+}
+For(m=0;m<6;m++)
+{
+If(str[i]==array3[m])
+Flag4++;
+}
+For(n=0;n<4;n++)
+{
+If(str[i]==array4[n])
+Flag5++;
+}
+
+
+}
+
+
+If(flag5>0)
+{
+Printf(“Invalid password, password should not contain %,!,(,)”;
+}
+If(flag1>0&&flag2>0&&flag3>0&&flag4>0)
+Printf(“Valid password”);
+Else if(flag1==0)
+Printf(“invalid password, password must contain a lower case alphabet”);
+Else if(flag2==0)
+Printf(“invalid password, password must contain atleast one uppercase alphabet”);
+Else if(flag3==0)
+Printf(“Invalid Password, password must contain atleast one number”);
+Else if(flag4==0)
+Printf(“Invalid password, password must contain atleast one special character”);
+
+Getch();
+
